@@ -301,6 +301,7 @@ function initLibrary()
             ZIndex = 2,
             Size = UDim2.new(0, sizeX, 0, 26),
             Position = utility.get_center(sizeX, sizeY),
+            BorderColor3 = Color3.fromRGB(0, 0, 0)
             BorderSizePixel = 1,
             BackgroundColor3 = Color3.fromRGB(22, 22, 22),
             Parent = gui
