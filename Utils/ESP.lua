@@ -130,7 +130,7 @@ function esp.GetPlayerInfo(plr)
         text = {
             ['name'] = {text = esp.displaynames and plr.DisplayName or plr.Name},
             ['distance'] = {text = (charInfo.character and charInfo.character:FindFirstChild('HumanoidRootPart')) and tostring(math.floor((charInfo.character.HumanoidRootPart.CFrame.p - workspace.CurrentCamera.CFrame.p).magnitude))},
-            ['health'] = {text = math.floor(charInfo.health), color = esp.barlayout.health.color1:Lerp(esp.barlayout.health.color2, charInfo.health / charInfo.maxhealth)},
+            ['health'] = {text = math.floor(charInfo.health), color = esp.barlayout.health.color1},
         },
         bar = {
             ['health'] = {value = charInfo.health, max = charInfo.maxhealth},
@@ -369,7 +369,7 @@ function esp:init()
                                 obj1.Size = obj2.Size - Vector2.new(2,2) - Vector2.new(isVert and 0 or barsize, isVert and barsize or 0)
                                 obj1.Position = obj2.Position + Vector2.new(1,1) + Vector2.new(isVert and 0 or (obj2.Size.X - (esp.outline[1] and 2 or 0)) - obj1.Size.X, isVert and (obj2.Size.Y - (esp.outline[1] and 2 or 0)) - obj1.Size.Y or 0)
 
-                                obj1.Color = espBarData.color1:Lerp(espBarData.color2, ConvertNumberRange(barInfo.value, barInfo.min or 0, barInfo.max or 100, 0, 1))
+                                obj1.Color = espBarData.color1
 
                                 if barPos == 'top' then topPos -= new
                                 elseif barPos == 'bottom' then bottomPos += new
